@@ -1,10 +1,10 @@
-#source for mvn path
 source ~/.bash_profile
 source ~/.bashrc
 source ~/.git-prompt.sh
 
 export CLICOLOR=1
 export TERM=xterm-256color
+autoload -U colors && colors
 
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="dd.mm.yyyy"
@@ -17,6 +17,8 @@ export M3_HOME=~/apache-maven-3.3.3
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 ####
-
+setopt no_beep
 setopt PROMPT_SUBST
-PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
+GIT_PS1_SHOWCOLORHINTS=true
+GIT_PS1_SHOWDIRTYSTATE=true
+PS1='%{$fg[cyan]%}%n@%m%  %{$fg[yellow]%}%2~/%{$fg[green]%}$(__git_ps1 " %s ")%{$reset_color%}$ '
