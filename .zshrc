@@ -21,4 +21,11 @@ setopt no_beep
 setopt PROMPT_SUBST
 GIT_PS1_SHOWCOLORHINTS=true
 GIT_PS1_SHOWDIRTYSTATE=true
+
+# %{$fg[color]%} defines color of next term
+
+#PS1 = '%n@%m'
 PS1='%{$fg[cyan]%}%n@%m%  %{$fg[yellow]%}%2~/%{$fg[green]%}$(__git_ps1 " %s ")%{$reset_color%}$ '
+
+#### aliases and scripts
+alias cf='caffeinate -d -t'
